@@ -1,5 +1,5 @@
 <script>
-  import { getWord } from "../get_word.js";
+  export let getWord;
 
   const ENTER_KEY = 13; // key code for the enter key
   let currentInput = ""; // the current text in the input
