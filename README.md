@@ -1,4 +1,10 @@
-# create-svelte
+[![Netlify Status](https://api.netlify.com/api/v1/badges/fc1c7002-7c80-4b1b-9e6f-84a226364169/deploy-status)](https://app.netlify.com/sites/womble/deploys)
+
+# Womble
+
+a simple unscrambling game.
+
+## create-svelte
 
 Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
 
@@ -34,5 +40,3 @@ npm run build
 ```
 
 You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.

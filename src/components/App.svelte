@@ -45,7 +45,7 @@
   class="bg-neutral-900 text-white grid items-center justify-center text-3xl"
 >
   <h1 class="text-4xl normal-font">
-    Womble &nbsp;&nbsp;&nbsp;&nbsp;<button class="text-5xl" on:click={resetWord}>⟳</button>
+    Womble &nbsp;&nbsp;&nbsp;&nbsp;<button title="Replay" class="text-5xl" on:click={resetWord}>⟳</button>
   </h1>
   <div>
     <p class="uppercase tracking-[1rem] text-3xl mb-3">{showWord ? word : shuffledWord}</p>
