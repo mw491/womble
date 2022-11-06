@@ -2,6 +2,9 @@
   export let getWord;
 
   const ENTER_KEY = 13; // key code for the enter key
+  const MAX_LENGTH = 5;
+  let guesses = 0;
+  let correctGuesses = 0;
   let currentInput = ""; // the current text in the input
   let inputRef;
   let correctGuess = false; // if user enters correct guess
@@ -31,13 +34,14 @@
 
   let guess = ""; // will be set to user's guess
   function setGuess(event) {
-    if (event.which === ENTER_KEY && event.target.value.length === 8) {
+    if (event.which === ENTER_KEY && event.target.value.length === MAX_LENGTH) {
       guess = event.target.value; // set guess to user guess
       correctGuess = guess === word ? true : false; // check if guess is correct
+      correctGuesses = correctGuess ? correctGuesses += 1 : correctGuesses;
       entered = true;
       showWord = true;
-      chances_used += 1;
-    }
+      guesses += 1
+    } 
   }
 </script>
 
@@ -53,17 +57,20 @@
     <input
       type="text"
       disabled="{entered}"
-      class="bg-transparent outline-none w-[17rem] tracking-[1rem] uppercase text-start"
-      class:caret-transparent={currentInput.length === 8}
+      class="bg-transparent outline-none w-[10.7rem] tracking-[1rem] uppercase text-start"
+      class:caret-transparent={currentInput.length === MAX_LENGTH}
       class:text-white={!entered}
       class:text-red-500={entered && !correctGuess}
       class:text-green-500={entered && correctGuess}
       on:keydown={setGuess}
       bind:value={currentInput}
       bind:this={inputRef}
-      maxlength="8"
+      maxlength="{MAX_LENGTH}"
       autofocus
     />
+    {#if guesses > 0}
+      <p class="opacity-70 text-lg">{correctGuesses} out of {guesses} correct</p>
+    {/if}
   </div>
   <p class="opacity-50 text-base normal-font">
     © <a class="underline" href="https://github.com/mw491">mw491</a> 2022
