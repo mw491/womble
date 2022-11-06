@@ -69,7 +69,7 @@
       autofocus
     />
     {#if guesses > 0}
-      <p class="opacity-70 text-lg">{correctGuesses} out of {guesses} correct</p>
+      <p class="opacity-70 text-sm text-start mt-5 w-[10.7rem]">{correctGuesses} out of {guesses} correct</p>
     {/if}
   </div>
   <p class="opacity-50 text-base normal-font">
